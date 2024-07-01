@@ -1,0 +1,47 @@
+PS> docker context use default
+
+PS> minikube delete
+
+PS> minikube start --driver=docker
+
+PS> minikube ip
+192.168.49.2
+
+PS> ssh docker@192.168.49.2
+
+PS> whoami
+debashish-pc\user
+
+PS> pwd
+
+PS> docker --version
+
+PS> docker --help
+
+PS> minikube status
+
+PS> kubectl create -f pod-define.yaml
+
+PS> kubectl get pod
+
+PS> kubectl describe pod myfirstpod
+
+PS> kubectl create -f rc-define.yaml
+
+PS> kubectl create -f rs-define.yaml
+
+PS> kubectl create -f deploy-define.yaml
+
+PS> kubectl describe deployment myfirstpoddeploy
+
+PS> kubectl scale --replicas=5 deployment/myfirstpoddeploy
+
+If you want to change the image 
+---------------------------------
+PS> kubectl set image deployment/myfirstpoddeploy myfirstpod=nginx
+
+PS> kubectl create -f service-define.yaml
+    or
+PS> kubectl expose deploy myfirstpoddeploy --name new-svc --port=3000 --type=NodePort
+
+PS> minikube service new-svc
